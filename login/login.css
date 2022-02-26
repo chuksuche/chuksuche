@@ -1,0 +1,18 @@
+.login {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+.login-wrapper {
+  padding: 8px;
+  background-color: aqua;
+  width: 300px;
+  height: 400px;
+  border-radius: 8px;
+}
+
+.kuma-awesome {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
