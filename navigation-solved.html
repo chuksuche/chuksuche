@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+            /* style the tab */
+            .tab {
+                overflow: hidden;
+                border: 1px solid rgb(12, 10, 10);
+                background-color: black;
+            }
+
+            /* style the buttons inside the tab */
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: 1px solid black;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 15px;
+                color: whitesmoke;
+
+            }
+            /* change the background color of buttons on hover */
+            .tab button:hover {
+                background-color: rgb(221, 91, 15);
+            }
+            /* color of the active tab clicked */
+            .tab button.active {
+                background-color: rgb(221, 91, 15);
+            }
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid rgb(12, 10, 10);
+                border-top: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab">
+        <button class="tablinks active" onclick="niceOne(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="niceOne(event, 'Services')">Services</button>
+        <button class="tablinks" onclick="niceOne(event, 'Pricing')">Pricing</button>
+        <button class="tablinks" onclick="niceOne(event, 'About')">About Us</button>
+        <button class="tablinks" onclick="niceOne(event, 'Contact')">Contact Us</button>   
+        </div>
+
+        <div id="Home" class="tabcontent">
+            <h3>Home</h3>
+            <p>Content for Home Page</p>
+            
+        </div>
+        <div id="Services" class="tabcontent">
+            <h3>Services</h3>
+            <p>Content for Services Page</p>
+        </div>
+        <div id="Pricing" class="tabcontent">
+            <h3>Pricing</h3>
+            <p>Content for Pricing Page</p>
+        </div>
+        <div id="About" class="tabcontent">
+            <h3>About Us</h3>
+            <p>Content for About Page</p>
+            
+        </div>
+        <div id="Contact" class="tabcontent">
+            <h3>Contact Us</h3>
+            <p>Call us on this number 070JAVASCRIPT</p>
+        </div>
+        <script>
+            //document.getElementById(cityName[0]).style.display = "block";
+            tabcontent[0].className += "active";
+            function niceOne(evt, cityName) {
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for(let i = 0; i < tabcontent.length; i++) {
+                    
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for(let i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                /* to show the tab content selected with tab color */
+                
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </body>
+</html>
